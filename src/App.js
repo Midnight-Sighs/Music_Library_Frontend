@@ -28,7 +28,7 @@ class App extends Component {
       await axios.delete(`http://127.0.0.1:8000/music/${song}/`)
     }
     catch (ex){
-      AudioListener('Error reaching the database!')
+      alert('Error reaching the database!')
     }
   }
 
