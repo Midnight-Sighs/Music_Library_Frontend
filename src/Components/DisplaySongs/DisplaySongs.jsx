@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteSong from '../DeleteSong/DeleteSong'
 
 const DisplaySongs = (props) => {
     
@@ -24,6 +25,7 @@ const DisplaySongs = (props) => {
                               <td>{song.genre}</td>
                               <td>{song.release_date}</td>
                               <td>{song.like_counter}</td>
+                              <td><DeleteSong song={song.id} delete={props.delete} all={props.all} /></td>
                           </tr>
                           )
                       })}

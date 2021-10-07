@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      songs: []
+      songs: [],
      }
   }
 
@@ -23,9 +23,18 @@ class App extends Component {
     });
   }
 
+  async deleteSong(song) {
+    try{
+      await axios.delete(`http://127.0.0.1:8000/music/${song}/`)
+    }
+    catch (ex){
+      AudioListener('Error reaching the database!')
+    }
+  }
+
   render() { 
     return(
-    <DisplaySongs songs={this.state.songs} />
+    <DisplaySongs songs={this.state.songs} delete={this.deleteSong} />
     )
   }
 }
