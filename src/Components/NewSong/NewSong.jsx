@@ -9,7 +9,7 @@ class NewSong extends Component {
             artist: 'artist', 
             album: 'album', 
             genre: 'genre', 
-            release_date: 'release_date',
+            release_year: 'release_date',
             like_counter: 0
          }
     }
@@ -26,7 +26,7 @@ class NewSong extends Component {
             "artist": this.state.artist,
             "album": this.state.album,
             "genre": this.state.genre,
-            "release_date": this.state.release_date,
+            "release_year": this.state.release_year,
             "like_counter": this.state.like_counter
         }
         event.preventDefault();
@@ -43,7 +43,7 @@ class NewSong extends Component {
                 <label for="artist">Artist:</label> <input name="artist" onChange={this.handleChange} value={this.state.artist} />
                 <label for="album">Song Album:</label><input name="album" onChange={this.handleChange} value={this.state.album} />
                 <label for="genre">Genre(s):</label><input name="genre" onChange={this.handleChange} value={this.state.genre} />
-                <label for="release_date">Release Date (YYYY-MM-DD HH:MM):</label><input name="release_date" onChange={this.handleChange} value={this.state.release_date} />
+                <label for="release_year">Release Year (YYYY):</label><input name="release_year" onChange={this.handleChange} value={this.state.release_year} />
                 <p><button type="submit">Add New Song</button></p>
                 <hr />
             </form>
