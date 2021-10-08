@@ -11,7 +11,7 @@ class App extends Component {
     this.state = { 
       songs: [],
       searchedSongs: [],
-      searchType: '',
+      searchType: 'artist',
       searchTerm: '',
      }
   }
@@ -55,15 +55,33 @@ class App extends Component {
   }
 
   searchSongs = () => {
-    debugger
+    let searchType = this.state.searchType
     let searchTerm = this.state.searchTerm.toLowerCase()
     let newSongList = this.state.searchedSongs
     this.state.songs.filter(function(foundSong){
-      if(foundSong.album.toLowerCase() === searchTerm){
-        newSongList.push(foundSong)
+      debugger
+      switch(searchType){
+        case "artist":
+          if(foundSong.artist.toLowerCase() === searchTerm){
+            newSongList.push(foundSong)}
+          break;
+        case "album":
+          if(foundSong.album.toLowerCase() === searchTerm){
+            newSongList.push(foundSong)};
+          break;
+        case "genre":
+          if(foundSong.genre.toLowerCase().includes(searchTerm)){
+            newSongList.push(foundSong)};
+        break;
+        case "release_year":
+          if(foundSong.release_year === searchTerm){
+            newSongList.push(foundSong)};
+          break;
+        default:
+          break;
       }
     })
-    if(newSongList === []){
+    if(newSongList.length === 0){
       alert('Your search yielded no results')
     }
     else{
@@ -72,11 +90,26 @@ class App extends Component {
       })
     }
   }
-  
+
+  submitFilterType = (event) => {
+    event.preventDefault();
+    this.setState({
+      searchType: event.target.elements.searchTypes.value
+    }, ()=> console.log(this.state.searchType))
+  }
 
   render() { 
     return(
       <div>
+        <form onSubmit = {this.submitFilterType}>
+          <select name="searchTypes">
+            <option value="artist">Artist</option>
+            <option value="title">Title</option>
+            <option value="genre">Genre</option>
+            <option value="release_year">Release Year</option>
+          </select>
+          <button type="submit" value="submit" >Lock In Search Type</button>
+        </form>
         <form onSubmit={this.searchSubmit}>
           <input type="text" placeholder="Type Search Here" onChange={this.searchOnChange}></input>
           <button type="submit">Search</button>
