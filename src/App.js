@@ -4,12 +4,14 @@ import axios from 'axios';
 import DisplaySongs from './Components/DisplaySongs/DisplaySongs';
 import NewSong from './Components/NewSong/NewSong';
 import SearchForm from './Components/SearchForm/SearchForm';
+import ResetAllSongs from './Components/DisplaySongs/ResetAllSongs';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       songs: [],
+      songsCopy: [],
      }
   }
 
@@ -20,7 +22,8 @@ class App extends Component {
   async getAllSongs(){
     let response = await axios.get('http://127.0.0.1:8000/music/');
     this.setState({
-      songs: response.data
+      songs: response.data,
+      songsCopy: response.data,
     });
   }
 
@@ -49,8 +52,9 @@ class App extends Component {
   render() { 
     return(
       <div>
+        <ResetAllSongs songs={this.state.songsCopy} resetSongs={this.resetSongs} />
         <SearchForm songs={this.state.songs} resetSongs={this.resetSongs} />
-        <DisplaySongs songs={this.state.songs} removeSong={this.removeSong} />
+        <DisplaySongs songs={this.state.songs} removeSong={this.removeSong} resetSongs={this.resetSongs}/>
         <NewSong addNewSong={this.addNewSong} />
       </div>
     )

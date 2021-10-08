@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import DeleteSong from '../DeleteSong/DeleteSong'
+import LikeSong from '../LikeSong/LikeSong';
 
 const DisplaySongs = (props) => {
    
+    function sendResetToApp(list){
+        props.resetSongs(list)
+    }
+
     return (
         <div>
         <h1>Display all Songs</h1>
@@ -19,13 +24,14 @@ const DisplaySongs = (props) => {
                       {props.songs.map(function(song){
                           return (
                           <tr>
-                              <td>{song.title}</td>
-                              <td>{song.artist}</td>
-                              <td>{song.album}</td>
-                              <td>{song.genre}</td>
-                              <td>{song.release_year}</td>
-                              <td>{song.like_counter}</td>
-                              <td><DeleteSong song={song.id} removeSong={props} /></td>
+                            <td>{song.title}</td>
+                            <td>{song.artist}</td>
+                            <td>{song.album}</td>
+                            <td>{song.genre}</td>
+                            <td>{song.release_year}</td>
+                            <td>{song.like_counter}</td>
+                            <td><DeleteSong song={song.id} removeSong={props} resetSongs={sendResetToApp} songs={props.songs}/></td>
+                            <td><LikeSong song={song.id} songs={props.songs} resetSongs={sendResetToApp} /></td>
                           </tr>
                           )
                       })}
