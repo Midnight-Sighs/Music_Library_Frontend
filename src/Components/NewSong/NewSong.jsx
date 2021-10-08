@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+import axios from 'axios';
 
 class NewSong extends Component {
     constructor(props) {
@@ -30,6 +31,7 @@ class NewSong extends Component {
         }
         event.preventDefault();
         axios.post('http://127.0.0.1:8000/music/new', newSong)
+        this.props.addNewSong(this.state)
     }
 
     render() { 
@@ -41,7 +43,7 @@ class NewSong extends Component {
                 <label for="artist">Artist:</label> <input name="artist" onChange={this.handleChange} value={this.state.artist} />
                 <label for="album">Song Album:</label><input name="album" onChange={this.handleChange} value={this.state.album} />
                 <label for="genre">Genre(s):</label><input name="genre" onChange={this.handleChange} value={this.state.genre} />
-                <label for="release_date">Release Date (YYYY-MM-DD HH-MM):</label><input name="release_date" onChange={this.handleChange} value={this.state.release_date} />
+                <label for="release_date">Release Date (YYYY-MM-DD HH:MM):</label><input name="release_date" onChange={this.handleChange} value={this.state.release_date} />
                 <p><button type="submit">Add New Song</button></p>
                 <hr />
             </form>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import DeleteSong from '../DeleteSong/DeleteSong'
 
 const DisplaySongs = (props) => {
-    
+
     return (
         <div>
         <h1>Display all Songs</h1>

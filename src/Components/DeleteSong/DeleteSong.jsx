@@ -2,14 +2,13 @@ import React from 'react';
  
 const DeleteSong = (props) =>{
 
-    const handleClick = (event) => {
+    const handleDeleteClick = (event) => {
         props.delete(props.song)
-        alert('Deleted Successfully')
       }
-
+      
       return(
         <div>
-          <button onClick={handleClick}>Delete</button>
+          <button onClick={handleDeleteClick}>Delete</button>
         </div>
       )
 
