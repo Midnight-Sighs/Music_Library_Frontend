@@ -1,4 +1,5 @@
 import React from 'react';
+import './DisplaySongs.css'
 
 const ResetAllSongs = (props) => {
 
@@ -10,7 +11,7 @@ const ResetAllSongs = (props) => {
 
     return (
         <div>
-            <button onClick={buttonOnClick}>See All Songs</button> 
+            <button class="reset-btn" onClick={buttonOnClick}>See All Songs</button> 
         </div>
     )
 }

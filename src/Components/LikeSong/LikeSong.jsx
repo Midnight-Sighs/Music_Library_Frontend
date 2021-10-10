@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './LikeSong.css';
 
 const LikeSong = (props) => {
 
@@ -26,7 +27,7 @@ const LikeSong = (props) => {
 
     return(
         <div>
-            <button onClick={likeOnClick}>Like This Songs!</button>
+            <button class="l-button" onClick={likeOnClick}>Like</button>
         </div>
     );
 }

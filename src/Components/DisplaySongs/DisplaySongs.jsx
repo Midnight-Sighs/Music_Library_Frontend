@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import DeleteSong from '../DeleteSong/DeleteSong'
+import DeleteSong from '../DeleteSong/DeleteSong';
 import LikeSong from '../LikeSong/LikeSong';
+import './DisplaySongs.css';
+import SingleSong from '../SingleSong/SingleSong'
 
 const DisplaySongs = (props) => {
    
@@ -9,37 +11,28 @@ const DisplaySongs = (props) => {
     }
 
     return (
-        <div>
-        <h1>Display all Songs</h1>
+        <div class='container' id='music-table'>
+        <h1>Song Library</h1>
               <table>
-                  <tbody>
-                    <tr>
-                      <th>Song Title</th>
-                      <th>Song Artist</th>
-                      <th>Song Album</th>
-                      <th>Song Genre(s)</th>
-                      <th>Release Year</th>
-                      <th>Likes</th>
-                    </tr>
-                      {props.songs.map(function(song){
-                          return (
-                          <tr>
-                            <td>{song.title}</td>
-                            <td>{song.artist}</td>
-                            <td>{song.album}</td>
-                            <td>{song.genre}</td>
-                            <td>{song.release_year}</td>
-                            <td>{song.like_counter}</td>
-                            <td><DeleteSong song={song.id} removeSong={props} resetSongs={sendResetToApp} songs={props.songs}/></td>
-                            <td><LikeSong song={song.id} songs={props.songs} resetSongs={sendResetToApp} /></td>
-                          </tr>
-                          )
-                      })}
-                  </tbody>
+                  {props.songs.map(function(song){
+                      return (
+                      <tbody>
+                        <tr>
+                          <td class="mbox"><p>{song.title}</p></td>
+                          <td class="mbox-utility"><DeleteSong song={song.id} removeSong={props} resetSongs={sendResetToApp} songs={props.songs}/></td>
+                          <td class="mbox-utility"><LikeSong song={song.id} songs={props.songs} resetSongs={sendResetToApp} /></td>
+                        </tr>
+                        <tr>
+                          
+                          <td class="mdetails" colspan="3"><SingleSong song={song} songs={props.songs} resetSongs={sendResetToApp} /></td>
+                        </tr>
+                      </tbody>
+                      )
+                  })}
               </table>
               <hr />
           </div>
       )
 }
 
-export default DisplaySongs
+export default DisplaySongs;

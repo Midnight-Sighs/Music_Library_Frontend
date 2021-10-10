@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import './SearchForm.css'
+
 class SearchForm extends Component {
     constructor(props) {
         super(props);
@@ -70,20 +72,21 @@ class SearchForm extends Component {
     render() { 
         return ( 
         <div>
+          <h1 class="mt-5">Search Songs</h1>
             <form onSubmit = {this.submitFilterType}>
-              <select name="searchTypes">
+              <select class="search-type-dd"name="searchTypes">
                 <option value="artist">Artist</option>
                 <option value="album">Album</option>
                 <option value="title">Title</option>
                 <option value="genre">Genre</option>
                 <option value="release_year">Release Year</option>
               </select>
-              <button type="submit" value="submit" >Lock In Search Type</button>
+              <button class="s-l-button" type="submit" value="submit" >Lock In Search Type</button>
             </form>
 
             <form onSubmit={this.searchSubmit}>
-              <input type="text" placeholder="Type Search Here" onChange={this.searchOnChange}></input>
-              <button type="submit">Search</button>
+              <input class="search-term-input" type="text" placeholder="Type Search Here" onChange={this.searchOnChange}></input>
+              <button class="s-l-button" type="submit">Search</button>
             </form>
         </div>
         );

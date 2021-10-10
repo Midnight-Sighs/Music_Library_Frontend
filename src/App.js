@@ -5,6 +5,7 @@ import DisplaySongs from './Components/DisplaySongs/DisplaySongs';
 import NewSong from './Components/NewSong/NewSong';
 import SearchForm from './Components/SearchForm/SearchForm';
 import ResetAllSongs from './Components/DisplaySongs/ResetAllSongs';
+import Header from './Components/Header/Header';
 
 class App extends Component {
   constructor(props) {
@@ -51,11 +52,20 @@ class App extends Component {
 
   render() { 
     return(
-      <div>
-        <ResetAllSongs songs={this.state.songsCopy} resetSongs={this.resetSongs} />
-        <SearchForm songs={this.state.songs} resetSongs={this.resetSongs} />
-        <DisplaySongs songs={this.state.songs} removeSong={this.removeSong} resetSongs={this.resetSongs}/>
-        <NewSong addNewSong={this.addNewSong} />
+      <div class='background'>
+        <div class="container-fluid">
+          <Header />
+          <div class='row'>
+            <div class = "col-lg-8 col-md-10 col-sm-12">
+              <DisplaySongs songs={this.state.songs} removeSong={this.removeSong} resetSongs={this.resetSongs}/>
+            </div>
+            <div class= "col-lg-4 col-md-2 col-sm-row mt-5">
+              <SearchForm songs={this.state.songs} resetSongs={this.resetSongs} />
+              <NewSong addNewSong={this.addNewSong} />
+              <ResetAllSongs songs={this.state.songsCopy} resetSongs={this.resetSongs} />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

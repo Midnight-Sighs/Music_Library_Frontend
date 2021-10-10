@@ -1,0 +1,45 @@
+#music-table{
+    width:75%;
+}
+
+.mbox{
+    width: 75%;
+    background-color: black;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6283555658591562) 0%, rgba(255,255,255,0.20258525773590685) 100%);
+    color: rgb(205, 241, 255);
+    border:rgb(12, 82, 139) solid 1px;
+}
+.mbox p{
+    padding-left:10px;
+    padding-top: 5px;
+}
+
+.mbox-utility{
+    width: 75%;
+    background-color: black;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6283555658591562) 0%, rgba(255,255,255,0.20258525773590685) 100%);
+    color: rgb(205, 241, 255);
+    border:rgb(12, 82, 139) solid 1px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.mdetails{
+    background-image: url(../../Images/Microphone.jpg);
+    background-size: cover;
+    border:rgb(12, 82, 139) solid 1px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px black;
+    padding-left:3em;
+}
+
+.reset-btn{
+    background-color: black;
+    color: orange;
+    border:solid 1px orange;
+    border-radius: 5px;
+    margin-left:1em;
+    margin-right:1em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

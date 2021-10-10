@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './DeleteSong.css';
  
 const DeleteSong = (props) =>{
 
@@ -31,7 +32,7 @@ const DeleteSong = (props) =>{
 
       return(
         <div>
-          <button onClick={handleDeleteClick}>Delete</button>
+          <button class="d-button" onClick={handleDeleteClick}>Delete</button>
         </div>
       )
 

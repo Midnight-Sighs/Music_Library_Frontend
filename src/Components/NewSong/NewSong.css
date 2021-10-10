@@ -1,0 +1,25 @@
+.form-text{
+    color:rgb(205, 241, 255);
+}
+
+.form-input{
+    border-radius:10px;
+    border: none;
+    color: rgb(205, 241, 255);
+    background-color: rgb(63, 63, 63);
+}
+
+.form-input:focus{
+    outline:rgb(12, 82, 139) solid 2px;
+}
+
+.new-song-btn{
+    background-color: black;
+    color: orange;
+    border:solid 1px orange;
+    border-radius: 5px;
+    margin-left:1em;
+    margin-right:1em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

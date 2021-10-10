@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lato&display=swap');
+
+.background{
+    background-color:rgb(22, 22, 22); 
+}
+
+
+h1{
+    color:orange;
+    font-family: 'Bree Serif', serif;
+}
+
+h4{
+    color: orange;
+    font-family: 'Bree Serif', serif;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+}

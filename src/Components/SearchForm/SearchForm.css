@@ -1,0 +1,33 @@
+.s-l-button{
+    background-color: black;
+    color: orange;
+    border:solid 1px orange;
+    border-radius: 5px;
+    margin-left:1em;
+    margin-right:1em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.s-l-button:hover{
+    background-color: rgb(63, 63, 63);
+}
+
+.search-type-dd{
+    border-radius:10px;
+    border: none;
+    padding: 3px;
+    color: rgb(205, 241, 255);
+    background-color: rgb(63, 63, 63);
+}
+
+.search-term-input{
+    border-radius:10px;
+    border: none;
+    color: rgb(205, 241, 255);
+    background-color: rgb(63, 63, 63);
+}
+
+.search-term-input:focus{
+    outline:rgb(12, 82, 139) solid 2px;
+}
