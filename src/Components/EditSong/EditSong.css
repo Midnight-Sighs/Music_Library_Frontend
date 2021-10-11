@@ -1,0 +1,45 @@
+.modal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color:rgba(0,0,0,.5);
+    display: flex;
+    align-items:left;
+    justify-content:center;
+}
+
+.modal-content{
+    border:none;
+    width:400px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6283555658591562) 0%, rgba(255,255,255,0.20258525773590685) 100%);
+}
+
+.modal-header .modal-footer{
+    padding: 10px;
+    border: none;
+}
+
+.modal-title{
+    margin:0;
+}
+
+.modal-body {
+    padding: 10px;
+}
+
+.mbtn{
+    background-color: black;
+    color: orange;
+    border:solid 1px orange;
+    border-radius: 5px;
+    margin-left:1em;
+    margin-right:1em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.mbtn:hover{
+    background-color: rgb(63, 63, 63);
+}
