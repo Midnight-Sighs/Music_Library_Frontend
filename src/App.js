@@ -7,6 +7,7 @@ import SearchForm from './Components/SearchForm/SearchForm';
 import ResetAllSongs from './Components/DisplaySongs/ResetAllSongs';
 import Header from './Components/Header/Header';
 import StickyNav from './Components/StickyNav/StickyNav.'
+import microphone from './Images/Microphone.jpg'
 
 class App extends Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class App extends Component {
 
   render() { 
     return(
-      <div className='background'>
+      <div className='bg'>
         <div id="header" className="container-fluid">
           <Header />
           <StickyNav />

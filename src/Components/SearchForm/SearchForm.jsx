@@ -66,6 +66,9 @@ class SearchForm extends Component {
         else{
             let list = this.state.searchedSongs;
             this.props.resetSongs(list)
+            this.setState({
+              searchedSongs : []
+            })
         }
       }
 

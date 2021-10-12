@@ -5,11 +5,11 @@ class EditSong extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            esTitle: '',
-            esArtist: '',
-            esAlbum: '',
-            esGenre: '',
-            esReleaseYear: '',
+            esTitle: this.props.song.title,
+            esArtist: this.props.song.artist,
+            esAlbum: this.props.song.album,
+            esGenre: this.props.song.genre,
+            esReleaseYear: this.props.song.release_year,
             esLikeCounter:this.props.song.like_counter,
          }
     }
@@ -29,9 +29,13 @@ class EditSong extends Component {
             "release_year": this.state.esReleaseYear,
             "like_counter":this.state.esLikeCounter
         }
-        event.preventDefault();
         debugger
-        axios.put(`http://127.0.0.1:8000/music/${this.props.song.id}/`, songEdits)
+        event.preventDefault();
+        this.editSong(songEdits);
+    }
+
+    async editSong(song){
+        await axios.put(`http://127.0.0.1:8000/music/${this.props.song.id}/`, song)
         this.forceUpdate()
         window.location = './SingleSong'
     }
