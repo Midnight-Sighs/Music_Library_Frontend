@@ -1,13 +1,13 @@
 # Music_Library_Frontend
 Front End for displaying, searching, and adding to a music library.  This music library features the ability to add, edit, delete, and view songs within a connected database.  Edits are featured in a modal and details are featured in a dropdown view.  
 
-![Image](ScreenShots/FullScreen.png)
+![Image](/ScreenShots/FullScreen.png)
 
 ## Notes
 
 I know a search would make more sense to search just a term against all the listed categories, but I wanted to try a dropdown and but also wanted to try using '.include' so I did so in the genres.  
 
-![Image](ScreenShots/Details.png)
+![Image](/ScreenShots/Details.png)
 
 I also want to address the lack of the "like" counter.  I have the like button and it does, in the database, give a like to said song as it should.  Not displaying the like counter in the details is a conscious descision.  A while back there was talk of Instagram and other social medias removing the like counters and it was something I supported.  While I think an artist or creator should be able to see those details, I chose to leave it off the public display.
 
