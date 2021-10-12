@@ -2,7 +2,7 @@
 Front End for displaying, searching, and adding to a music library.  This music library features the ability to add, edit, delete, and view songs within a connected database.  Edits are featured in a modal and details are featured in a dropdown view.  
 
 
-![Image](/FullScreen.png)
+![Image](FullScreen.png)
 
 ## Notes
 
