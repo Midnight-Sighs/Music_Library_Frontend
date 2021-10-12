@@ -38,34 +38,33 @@ class NewSong extends Component {
     render() { 
         return ( 
         <div>
-            <h1 class="mt-5" >Create a New Song</h1>
+            <h1 className="mt-5" >Create a New Song</h1>
             <form onSubmit={this.handleSubmit}>
                 <table>
                     <tbody>
                         <tr>
-                            <td><label class="form-text" for="title">Title:</label></td> 
-                            <td><input class="form-input" name="title" onChange={this.handleChange} placeholder="Title" /></td>
+                            <td><label className="form-text">Title:</label></td> 
+                            <td><input className="form-input" name="title" onChange={this.handleChange} placeholder="Title" /></td>
                         </tr>
                         <tr>
-                            <td><label class="form-text" for="artist">Artist:</label></td> 
-                            <td><input class="form-input" name="artist" onChange={this.handleChange} placeholder="Artist" /></td>
+                            <td><label className="form-text">Artist:</label></td> 
+                            <td><input className="form-input" name="artist" onChange={this.handleChange} placeholder="Artist" /></td>
                         </tr>
                         <tr>
-                            <td><label class="form-text" for="album">Song Album:</label></td>
-                            <td><input class="form-input" name="album" onChange={this.handleChange} placeholder="Album" /></td>
+                            <td><label className="form-text">Song Album:</label></td>
+                            <td><input className="form-input" name="album" onChange={this.handleChange} placeholder="Album" /></td>
                         </tr>
                         <tr>
-                            <td><label class="form-text" for="genre">Genre(s):</label></td>
-                            <td><input class="form-input" name="genre" onChange={this.handleChange} placeholder="Genre" /></td>
+                            <td><label className="form-text">Genre(s):</label></td>
+                            <td><input className="form-input" name="genre" onChange={this.handleChange} placeholder="Genre" /></td>
                         </tr>
                         <tr>
-                            <td><label class="form-text" for="release_year">Release Year (YYYY):</label></td>
-                            <td><input class="form-input" name="release_year" onChange={this.handleChange} placeholder="Release Year" /></td>
+                            <td><label className="form-text" >Release Year (YYYY):</label></td>
+                            <td><input className="form-input" name="release_year" onChange={this.handleChange} placeholder="Release Year" /></td>
                         </tr>
                         <tr>
-                            <td col-span="2"><p><button class="new-song-btn" type="submit">Add New Song</button></p></td>
+                            <td col-span="2"><p><button className="new-song-btn" type="submit">Add New Song</button></p></td>
                         </tr>
-                        <hr />
                     </tbody>
                 </table>
             </form>

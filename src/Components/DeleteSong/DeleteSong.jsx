@@ -32,7 +32,7 @@ const DeleteSong = (props) =>{
 
       return(
         <div>
-          <button class="d-button" onClick={handleDeleteClick}>Delete</button>
+          <button className="d-button" onClick={handleDeleteClick}>Delete</button>
         </div>
       )
 

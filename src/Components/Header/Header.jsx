@@ -5,9 +5,9 @@ import './Header.css'
 const Header = () => {
 
     return(
-        <div class="container-fluid" id='header-container'>
-            <img src={concertLights} id="concertLights"></img>
-            <div class="top-right-text">Music Library</div>
+        <div className="container-fluid" id='header-container'>
+            <img src={concertLights} id="concertLights" alt="blue concert lights above a crowd"></img>
+            <div className="top-right-text">Music Library</div>
         </div>
     )
 }

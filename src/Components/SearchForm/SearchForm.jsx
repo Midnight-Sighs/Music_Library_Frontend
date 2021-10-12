@@ -72,21 +72,21 @@ class SearchForm extends Component {
     render() { 
         return ( 
         <div>
-          <h1 class="mt-5">Search Songs</h1>
+          <h1 className="mt-5">Search Songs</h1>
             <form onSubmit = {this.submitFilterType}>
-              <select class="search-type-dd"name="searchTypes">
+              <select className="search-type-dd"name="searchTypes">
                 <option value="artist">Artist</option>
                 <option value="album">Album</option>
                 <option value="title">Title</option>
                 <option value="genre">Genre</option>
                 <option value="release_year">Release Year</option>
               </select>
-              <button class="s-l-button" type="submit" value="submit" >Lock In Search Type</button>
+              <button className="s-l-button" type="submit" value="submit" >Lock In Search Type</button>
             </form>
 
             <form onSubmit={this.searchSubmit}>
-              <input class="search-term-input" type="text" placeholder="Type Search Here" onChange={this.searchOnChange}></input>
-              <button class="s-l-button" type="submit">Search</button>
+              <input className="search-term-input" type="text" placeholder="Type Search Here" onChange={this.searchOnChange}></input>
+              <button className="s-l-button" type="submit">Search</button>
             </form>
         </div>
         );

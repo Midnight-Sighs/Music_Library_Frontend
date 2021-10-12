@@ -27,7 +27,7 @@ const LikeSong = (props) => {
 
     return(
         <div>
-            <button class="l-button" onClick={likeOnClick}>Like</button>
+            <button className="l-button" onClick={likeOnClick}>Like</button>
         </div>
     );
 }

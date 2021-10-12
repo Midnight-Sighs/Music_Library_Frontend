@@ -11,7 +11,7 @@ const ResetAllSongs = (props) => {
 
     return (
         <div>
-            <button class="reset-btn" onClick={buttonOnClick}>See All Songs</button> 
+            <button className="reset-btn" onClick={buttonOnClick}>See All Songs</button> 
         </div>
     )
 }

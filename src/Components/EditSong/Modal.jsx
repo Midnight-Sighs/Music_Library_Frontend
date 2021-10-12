@@ -1,26 +1,43 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 import './EditSong.css'
+import { Modal } from 'react-bootstrap';
+import EditSong from './EditSong'
 
-const Modal = (props) =>{
-    if (!props.show) {
-        return null
-    }
-    
-    return(
-        <div class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Hellow</h4>
-                </div>
-                <div class="modal-body">
-                    content (form here)
-                </div>
-                <div class="modal-footer">
-                    <button class="mbtn" onClick={props.onClose}>Close</button>
-                </div>
-            </div>
-        </div>
-    )
+
+const ModalEdit = (props) => {
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    return (
+      <>
+        <button className="mbtn" onClick={handleShow}>
+          Edit
+        </button>
+  
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header className="modal-content-edit">
+            <Modal.Title><h1>Edit Song</h1></Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modal-content-edit">
+            <p><EditSong song={props.songId} /></p>
+            
+          </Modal.Body>
+          <Modal.Footer className="modal-content-edit">
+            <button className="mbtn" onClick={handleClose}>
+              Close
+            </button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
 }
+  
 
-export default Modal;
+export default ModalEdit;
