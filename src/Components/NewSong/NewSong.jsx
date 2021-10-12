@@ -11,13 +11,35 @@ class NewSong extends Component {
             album: 'album', 
             genre: 'genre', 
             release_year: 'release_date',
-            like_counter: 0
+            like_counter: 0,
+            defaultValue: '',
+            errors: {
+                release_year: ''
+            }
          }
     }
 
-    handleChange = (event) =>{
+    resetForm = () =>{
         this.setState({
-            [event.target.name]: event.target.value
+            title: 'title', 
+            artist: 'artist', 
+            album: 'album', 
+            genre: 'genre', 
+            release_year: 'release_date',
+            like_counter: 0
+        })
+        Array.from(document.querySelectorAll("input")).forEach(
+            input => (input.value = "")
+          );
+    }
+
+    handleChange = (event) =>{
+        let errors = this.state.errors;
+        if(event.target.name === 'release_year'){
+            errors.release_year = event.target.value && event.target.value.length <4 ? 'You must provide 4 integers for the year' : null
+        }
+        this.setState({
+            [event.target.name]: event.target.value, errors:errors
         })
     }
 
@@ -44,7 +66,7 @@ class NewSong extends Component {
                     <tbody>
                         <tr>
                             <td><label className="form-text">Title:</label></td> 
-                            <td><input className="form-input" name="title" onChange={this.handleChange} placeholder="Title" /></td>
+                            <td><input className="form-input" name="title" onChange={this.handleChange} defaultValue={this.defaultValue} placeholder="Title" /></td>
                         </tr>
                         <tr>
                             <td><label className="form-text">Artist:</label></td> 
@@ -60,11 +82,13 @@ class NewSong extends Component {
                         </tr>
                         <tr>
                             <td><label className="form-text" >Release Year (YYYY):</label></td>
-                            <td><input className="form-input" name="release_year" onChange={this.handleChange} placeholder="Release Year" /></td>
+                            <td><input className="form-input" name="release_year"  type="number" pattern="[0-9]" inputMode="numeric" onChange={this.handleChange} placeholder="Release Year" /></td>
+                            {this.state.errors.release_year ? <td style={{color:'orange'}}>{this.state.errors.release_year}</td> : ''}
                         </tr>
                         <tr>
                             <td col-span="2"><p><button className="new-song-btn" type="submit">Add New Song</button></p></td>
-                        </tr>
+                            <td col-span="2"><p><button className="new-song-btn" type="button" onClick={this.resetForm}>Reset Form</button></p></td>
+                       </tr>
                     </tbody>
                 </table>
             </form>
