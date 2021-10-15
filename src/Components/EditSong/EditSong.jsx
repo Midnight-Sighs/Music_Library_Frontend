@@ -29,7 +29,6 @@ class EditSong extends Component {
             "release_year": this.state.esReleaseYear,
             "like_counter":this.state.esLikeCounter
         }
-        debugger
         event.preventDefault();
         this.editSong(songEdits);
     }
